@@ -4,16 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock-Picker-App-MVP-1.0</title>
+   
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div id="stock-picker-header">
+        <form>
         <img
             src=""
             alt=""
         />
-        <h1>Stock Picker (MVP) 1.0</h1>
-    </div>
+        <h1>Stock Picker (MVP) 1.0</h1>//
     
+        <br />
+        <p style="text-align:left">Enter stock code</p>
+        <br />
+        <input
+            type="text"
+            name = "code"
+            value = "AAPL"
+            placeholder="Enter a stock code ..."
+            class="input-text"
+            />
+     
+        <button id='btnFind' style="align-items: center">Find Stock ...</button>
+
+         </form>
+        </div>
+        <script src="script.js"></script>
 </body>
 </html>
