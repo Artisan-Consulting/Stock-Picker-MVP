@@ -14,10 +14,10 @@
             src=""
             alt=""
         />
-        <h1>Stock Picker (MVP) 1.0</h1>//
+        <h1>Stock Picker (MVP) 1.0</h1>
     
-        <br />
-        <p style="text-align:left">Enter stock code</p>
+        <br /><br />
+        <p id='caption' style="text-align:left">Enter stock code</p>
         <br />
         <input
             type="text"
@@ -26,8 +26,19 @@
             placeholder="Enter a stock code ..."
             class="input-text"
             />
+            <br /><br />
+
      
         <button id='btnFind' style="align-items: center">Find Stock ...</button>
+        <hr>
+        <h3>Price Chart</h3>
+        <embed id="price-chart" type="text/html"
+        src="https://widget.finnhub.io/widgets/stocks/chart?symbol=AAPL&watermarkColor=blue&backgroundColor=black&textColor=white"
+        width="1000" height="500" backgroundColor="black">
+
+        <br />
+        <p id="stock-price" style="text-align:left">   </p>
+        <br /><br />
 
          </form>
         </div>

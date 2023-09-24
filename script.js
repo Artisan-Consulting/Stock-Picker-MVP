@@ -7,6 +7,7 @@ document.getElementById('btnFind').addEventListener('click', findStock);
 function findStock() {
     console.log ("even triggered")
     alert ("triggered")
+    document.querySelector("section#stock-picker-header h1').innerHTML = "$244.88"
 }
 
 
