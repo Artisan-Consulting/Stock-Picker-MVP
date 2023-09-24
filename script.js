@@ -1,4 +1,6 @@
 // Stock Picker:  Find Button
+require('dotenv').config()
+console.log(process.env)
 
 document.getElementById('btnFind').addEventListener('click', findStock);
 
@@ -7,7 +9,8 @@ document.getElementById('btnFind').addEventListener('click', findStock);
 function findStock() {
     console.log ("even triggered")
     alert ("triggered")
-    document.querySelector("section#stock-picker-header h1').innerHTML = "$244.88"
+    //document.querySelector("section#stock-picker-header h1').innerHTML = "$244.88"
+    //
 }
 
 
