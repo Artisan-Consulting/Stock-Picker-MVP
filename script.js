@@ -1,6 +1,10 @@
 // Stock Picker:  Find Button
-require('dotenv').config()
-console.log(process.env)
+require('dotenv').config();
+
+//console.log(process.env);
+
+const api_key = process.env.FINNHUB_API_KEY;
+
 
 document.getElementById('btnFind').addEventListener('click', findStock);
 
