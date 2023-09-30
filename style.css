@@ -47,10 +47,16 @@ nav {
   font-size: 26px;
 }
 
+#profile2-ticker {
+
+  opacity: 90%;
+  font-size: 68px;
+}
+
 #profile2-name {
 
   opacity: 90%;
-  font-size: 36px;
+  font-size: 28px;
 }
 
 #profile2-industry {

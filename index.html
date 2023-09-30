@@ -9,15 +9,15 @@
 </head>
 <body>
     <div id="nav">
-        Stocks | Forex | Indices | Commodities | Cryptos |
+       | Stocks | Forex | Indices | Commodities | Cryptos |
     </div>
 
     
 
     <div class="search">
-        <p id="caption" style="text-align:left">Enter stock code</p>
+        <p id="caption" style="text-align:center">Enter stock code</p>
         <input id="code" type="text" name="code" value="AAPL" placehoder ="Enter a stock code" class="input-text" />
-        <button id='btnFind' style="align-items: center">$</button>
+        <button id='btnFind' style="align-items: center">></button>
     </div>
 
     <div id="search-result">
@@ -27,6 +27,7 @@
     </div>
 
     <div id="company-profile2">
+        <p id='profile2-ticker'></p>
         <p id='profile2-logo'></p>
         <p id='profile2-name'></p>
         <p id='profile2-industry'></p>
@@ -35,7 +36,7 @@
         <br />
     </div>
     <div id="peers">
-        <button id='btnPeers' style="align-items: center">Get Companies in Same Sector</button>
+        <button id='btnPeers' style="align-items: center">Companies in Same Sector</button>
         <p id='similar-company'></p>
         <br /><br />
     </div>
@@ -47,10 +48,18 @@
         <br>
     </div>
 
+    <div class="recommendation">
+        <p id='latest'>Latest Recommendation</p>
+        <p id='latest-poll'></p>
+        <p id='previous-poll'></p>
+    </div>
+
     <div class='price-chart'>
-        <embed id="price-chart" type="text/html" 
+        <!-- demo chart only; next version use interactive live-chart widget-->
+    <!--<embed id="price-chart" type="text/html" 
         src="https://widget.finnhub.io/widgets/stocks/chart?symbol=AAPL&watermarkColor=blue&backgroundColor=black&textColor=white"
-        width="600" height="300" backgroundColor="black">
+        width="300" height="150" backgroundColor="black">
+    -->
     </div>
 
 

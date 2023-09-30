@@ -25,6 +25,7 @@ function fetchStocks(api_key) {
                 //console.log (data)
                 let stocks = data
                 //console.log (stocks.c, stocks.h, stocks.l)
+                
                 document.getElementById('price-data-labels').innerHTML = ' low ' +  '-----' + ' current ' + '-----' + ' high ' + '<br>'
                 document.getElementById('price-data-candle').innerHTML = stocks.l +  '------' + stocks.c + '------' + stocks.h
         //.then (callMyFunction())
@@ -39,14 +40,16 @@ function fetchStocks(api_key) {
                 console.log (profile2.logo)
                 const companyLogo = '<img src=' + profile2.logo + ' width="200" height="200" >'
                 console.log (companyLogo)
+                document.getElementById('profile2-ticker').innerHTML = profile2.ticker
                 document.getElementById('profile2-name').innerHTML = profile2.name
                 document.getElementById('profile2-industry').innerHTML = profile2.finnhubIndustry
                // document.getElementById('profile2-capitalisation').innerHTML = profile2.marketCapitalization
                 document.getElementById('profile2-logo').innerHTML = companyLogo;
-                document.getElementById("btn-peers").value = profile2.finnhubIndustry;
-        //.then (callMyFunction())
-        })
+                document.getElementById('btn-peers').value = profile2.finnhubIndustry;
 
+        })
+          getPeers();
+          getRecommendation();
 }
 
 
@@ -85,7 +88,7 @@ async function getMarketNews() {
         //console.log (data4)
 
         let peers=data4
-        console.log (peers)
+        //console.log (peers)
         peers.forEach(myFunction);
 
         function myFunction() {
@@ -111,19 +114,56 @@ async function getMarketNews() {
         //console.log (data4)
 
         let peers=data4
-        console.log (peers)
+        //console.log (peers)
         peers.forEach(myFunction);
 
         function myFunction() {
           document.getElementById("similar-company").innerHTML = peers;
           const btn = document.createElement("button");
           //const btnText = documenet.createTextNode("test") ;
-          document.body.appendChild(btn)
+          //document.body.appendChild(btn)
         }
 
       })
 
    // alert ("fetch complete")
+}
+
+function getRecommendation () {
+ //url="https://finnhub.io/api/v1/stock/recommendation?symbol=AAPL&token="
+ const urlPreRecommendation = "https://finnhub.io/api/v1/stock/recommendation?symbol="
+ const stockCode = document.getElementById("code").value;
+ api_key ="ck9dp29r01qq65jkavc0ck9dp29r01qq65jkavcg"
+ const urlRecommendation = urlPreRecommendation + stockCode + "&token=" + api_key
+
+ const recommendation = fetch (urlRecommendation)
+      .then ((resp5) => resp5.json())
+      //.then ((json) => console.log(json))
+      .then (data5 => {
+            let recommendation = data5
+            document.getElementById("latest-poll").innerHTML =
+            recommendation[0].buy + ' buy, ' +
+            recommendation[0].sell + ' sell, ' +
+            recommendation[0].hold + ' hold, ' +
+            recommendation[0].strongBuy + ' strong buy, ' +
+            recommendation[0].strongSell +' strong sell ' 
+
+
+            const myArray = recommendation.map(myFunction)
+
+            function myFunction (value, index, array) {
+              let i=1
+              while (i<myArray.length) {
+
+                document.getElementById("previous-poll").innerHTML = recommendation[i].buy 
+                i++;
+              }
+         
+            }
+            
+
+
+  });
 }
 
 function bigLogo () {
@@ -135,7 +175,7 @@ function bigLogo () {
 
 function timeframeMonthly () {
  // alert ('Monthly')
- 
+ document.getElementById('price-chart').innerHTML = 'src="https://widget.finnhub.io/widgets/stocks/chart?symbol=AAPL&watermarkColor=blue&backgroundColor=black&textColor=white"'
 
 }
 
@@ -203,3 +243,11 @@ document.addEventListener ('DOMContentLoaded', (event) => {
         //alert ("loaded")
         getMarketNews()
       });
+
+document.getElementById('code').addEventListener ('keydown', function() {
+  getApiKey();
+  getPeers();
+})
+// document.getElementById('code').addEventListener ('keydown', => {
+//   alert ("Key is down")
+// });
