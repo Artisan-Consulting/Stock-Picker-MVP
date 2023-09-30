@@ -3,45 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock-Picker-App-MVP-1.0</title>
-   
+    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
-    <div id="stock-picker-header">
-        <form>
-        <img
-            src=""
-            alt=""
-        />
-        <h1>Stock Picker (MVP) 1.0</h1>
+    <div id="nav">
+        Stocks | Forex | Indices | Commodities | Cryptos |
+    </div>
+
     
-        <br /><br />
-        <p id='caption' style="text-align:left">Enter stock code</p>
-        <br />
-        <input
-            type="text"
-            name = "code"
-            value = "AAPL"
-            placeholder="Enter a stock code ..."
-            class="input-text"
-            />
-            <br /><br />
 
-     
-        <button id='btnFind' style="align-items: center">Find Stock ...</button>
-        <hr>
-        <h3>Price Chart</h3>
-        <embed id="price-chart" type="text/html"
+    <div class="search">
+        <p id="caption" style="text-align:left">Enter stock code</p>
+        <input id="code" type="text" name="code" value="AAPL" placehoder ="Enter a stock code" class="input-text" />
+        <button id='btnFind' style="align-items: center">$</button>
+    </div>
+
+    <div id="search-result">
+        <p id='price-data-labels'></p>
+        <p id='price-data-candle'></p>
+        <br />
+    </div>
+
+    <div id="company-profile2">
+        <p id='profile2-logo'></p>
+        <p id='profile2-name'></p>
+        <p id='profile2-industry'></p>
+        <p id='profile2-capitalisation'></p>
+
+        <br />
+    </div>
+    <div id="peers">
+        <button id='btnPeers' style="align-items: center">Get Companies in Same Sector</button>
+        <p id='similar-company'></p>
+        <br /><br />
+    </div>
+
+    <div class="timeframe">
+        <button id='monthly' style="align-items: center">Monthly</button>
+        <button id='weekly' style="align-items: center">Weekly</button>
+        <button id='daily' style="align-items: center">Daily</button>
+        <br>
+    </div>
+
+    <div class='price-chart'>
+        <embed id="price-chart" type="text/html" 
         src="https://widget.finnhub.io/widgets/stocks/chart?symbol=AAPL&watermarkColor=blue&backgroundColor=black&textColor=white"
-        width="1000" height="500" backgroundColor="black">
+        width="600" height="300" backgroundColor="black">
+    </div>
 
-        <br />
-        <p id="stock-price" style="text-align:left">   </p>
-        <br /><br />
 
-         </form>
-        </div>
-        <script src="index.js"></script>
+<footer class="footer">
+    <div id="news">
+        
+    </div>
+    <div id="news-content">
+        <button id='btnNews' style="align-items: center" visible="hide">Get Latest News</button>
+        <p id='news-headline'></p>
+    </div>
+    </footer>
+    <script src="index.js"></script>
 </body>
 </html>
