@@ -38,7 +38,7 @@ function fetchStocks(api_key) {
                 console.log (data2)
                 let profile2 = data2
                 console.log (profile2.logo)
-                const companyLogo = '<img src=' + profile2.logo + ' width="200" height="200" >'
+                const companyLogo = '<img src=' + profile2.logo + ' width="100" height="100" >'
                 console.log (companyLogo)
                 document.getElementById('profile2-ticker').innerHTML = profile2.ticker
                 document.getElementById('profile2-name').innerHTML = profile2.name
@@ -65,14 +65,6 @@ async function getMarketNews() {
           let i = 0;
           document.getElementById("news-headline").innerHTML = news[i].category + ': ' + news[i].source + ': ' + news[i].headline + ' ' + news[i].summary;
           const pages = news.length;
-        // const delay = 1000;
-        //   let i=0;
-        //   while (i < pages) {
-        //       document.getElementById("news-headline").innerHTML = news[i].headline;
-        //       setTimeout (function () {
-        //         i++;
-        //       });  
-        //    }
          }
   );
 
@@ -112,21 +104,16 @@ async function getMarketNews() {
       //.then ((json) => console.log(json))
       .then (data4 => {
         //console.log (data4)
-
         let peers=data4
-        //console.log (peers)
-        peers.forEach(myFunction);
+        document.getElementById("similar-company").innerHTML = peers;
+        console.log (peers[0], peers[1])
 
-        function myFunction() {
-          document.getElementById("similar-company").innerHTML = peers;
-          const btn = document.createElement("button");
-          //const btnText = documenet.createTextNode("test") ;
-          //document.body.appendChild(btn)
-        }
-
+          for (let i = 0; i < peers.length; i++) {
+            const btn = document.createElement("button");
+            btn.textContent = peers[i]
+            peers.recommendation.append("btn")
+          }
       })
-
-   // alert ("fetch complete")
 }
 
 function getRecommendation () {
@@ -147,21 +134,6 @@ function getRecommendation () {
             recommendation[0].hold + ' hold, ' +
             recommendation[0].strongBuy + ' strong buy, ' +
             recommendation[0].strongSell +' strong sell ' 
-
-
-            const myArray = recommendation.map(myFunction)
-
-            function myFunction (value, index, array) {
-              let i=1
-              while (i<myArray.length) {
-
-                document.getElementById("previous-poll").innerHTML = recommendation[i].buy 
-                i++;
-              }
-         
-            }
-            
-
 
   });
 }

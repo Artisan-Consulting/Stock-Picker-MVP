@@ -23,7 +23,6 @@
     <div id="search-result">
         <p id='price-data-labels'></p>
         <p id='price-data-candle'></p>
-        <br />
     </div>
 
     <div id="company-profile2">
@@ -32,21 +31,13 @@
         <p id='profile2-name'></p>
         <p id='profile2-industry'></p>
         <p id='profile2-capitalisation'></p>
-
-        <br />
     </div>
     <div id="peers">
-        <button id='btnPeers' style="align-items: center">Companies in Same Sector</button>
+      <button id='btnPeers' style="align-items: center">Similar Companies</button> 
         <p id='similar-company'></p>
-        <br /><br />
     </div>
 
-    <div class="timeframe">
-        <button id='monthly' style="align-items: center">Monthly</button>
-        <button id='weekly' style="align-items: center">Weekly</button>
-        <button id='daily' style="align-items: center">Daily</button>
-        <br>
-    </div>
+
 
     <div class="recommendation">
         <p id='latest'>Latest Recommendation</p>
@@ -56,19 +47,25 @@
 
     <div class='price-chart'>
         <!-- demo chart only; next version use interactive live-chart widget-->
-    <!--<embed id="price-chart" type="text/html" 
+    <embed id="price-chart" type="text/html" 
         src="https://widget.finnhub.io/widgets/stocks/chart?symbol=AAPL&watermarkColor=blue&backgroundColor=black&textColor=white"
         width="300" height="150" backgroundColor="black">
-    -->
+    
     </div>
 
+    <div class="timeframe">
+        <p id="timeframe">Sample Chart Only</p>
+        <button id='monthly' style="align-items: center">Monthly</button>
+        <button id='weekly' style="align-items: center">Weekly</button>
+        <button id='daily' style="align-items: center">Daily</button>
+    </div>
 
 <footer class="footer">
     <div id="news">
         
     </div>
     <div id="news-content">
-        <button id='btnNews' style="align-items: center" visible="hide">Get Latest News</button>
+        <button id='btnNews' style="align-items: center" >Get Latest News</button>
         <p id='news-headline'></p>
     </div>
     </footer>

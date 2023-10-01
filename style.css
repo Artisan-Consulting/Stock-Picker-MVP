@@ -48,24 +48,20 @@ nav {
 }
 
 #profile2-ticker {
-
   opacity: 90%;
-  font-size: 68px;
+  font-size: 34px;
 }
 
 #profile2-name {
-
   opacity: 90%;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 #profile2-industry {
-
   opacity: 90%;
-  font-size: 36px;
+  font-size: 20px;
 }
 #profile2-capitalisation {
-
   opacity: 90%;
   font-size: 36px;
 }
@@ -73,8 +69,8 @@ nav {
 #profile2-logo {
   opacity: 90%;
   font-size: 36px;
-  width: "500";
-  height: "700";
+  width: "300";
+  height: "300";
 }
 
 #price-chart {
@@ -89,11 +85,13 @@ button {
   background-color: #b6d0d0;
   border: white;
   border-radius: 6px;
-  height: 3rem;
+  height: 2rem;
   width: max-content;
-  padding: 13px;
+  padding: 3px;
+  padding-left: 20px;
+  padding-right: 20px;
   color: rgb(21, 24, 23);
-  font-size: 18px;
+  font-size: 16px;
   justify-self: center;
 }
 
@@ -104,17 +102,19 @@ button:hover {
 }
 
 .input-text {
-  border-radius: 5px;
-  height: 3rem;
+  border-radius: 9px;
+  height: 2.5rem;
   width: 25%;
   font-size: 28px;
   font-family: monospace;
   margin: 5px;
   text-align: center;
+  offset: relative;
+  right:15px;
 }
 
 P {
-  line-height:  26px;
+  line-height:  22px;
   color: black;
   font-size: 18px;
   text-align: center;
@@ -143,10 +143,11 @@ caption {
   position: fixed;
   left: 0;
   bottom: 0;
-  height: 126px;
+  height: 110px;
   width: 100%;
   background-color: rgb(179, 179, 168);
   color: white;
-  text-align: center;
+  font-size: 18px;
+  text-align: left;
 
 }
